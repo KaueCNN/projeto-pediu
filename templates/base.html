@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'sticky-footer.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+	<title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+
+<div class="row">
+  <div class="col-sm-8">
+  	 	{% block menu %}
+		{% endblock %}
+  </div>
+
+  <div class="col-sm-4">
+  	 	{% block login %}
+		{% endblock %}
+  </div>
+
+</div>
+
+
+<div class="row">
+
+  <div class="container">
+  	<div class="jumbotron jumbotron-fluid">
+			{% block main %}
+			{% endblock %}
+	</div>
+  </div>
+
+</div>
+
+
+
+	{% block footer %}
+	{% endblock %}
+
+
+</body>
+</html>

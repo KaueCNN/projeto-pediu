@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}SEJA BEM VINDO!{% endblock %}
+
+{% block main %}
+
+<div class="container" style="align:'center';">
+
+
+      <h1 class="display-4" align="center">CADASTRO DE PRODUTOS</h1>
+      <br><br>
+      <p align="center"><a href="{% url 'login' %}"  class="btn btn-primary btn-lg btn-block"> Entrar </a></p>
+
+</div>	
+
+{% endblock %}
+
+{% block footer %}
+  <footer class="footer">
+      <span class="text-muted"> - Protótipo -</span>
+  </footer>
+{% endblock %}
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Deletar Usuário</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Tem certeza que deseja deletar {{ produtos.nome_produto }}?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

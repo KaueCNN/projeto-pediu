@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %}SEJA BEM VINDO!{% endblock %}
+
+
+{% block login %}		
+{% if user.is_authenticated %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<p align="center">Olá {{ user.username }}  <a href="{% url 'logout' %}" class="badge badge-danger">Sair</a></p>
+</nav>
+{% endif %}
+{% endblock %}
+
+
+{% block menu %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Sistema de Pedidos</a>
+
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'listar_produtos' %}">Produtos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'listar_fornecedores' %}">Fornecedores</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'listar_clientes' %}">Clientes</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="{% url 'listar_vendedores' %}">Vendedores</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="{% url 'novo_atendimento' %}">Atendimento</a>
+      </li>
+		<li class="nav-item">
+
+      </li>
+    </ul>
+
+
+  </div>
+</nav>
+
+{% endblock %}
+
+{% block main %}
+
+	<h3> Lista de Fornecedores <br><br></h3>
+
+	<div class="row">
+		<div class="col">
+			
+		</div>
+
+		<div class="col-6">
+			<ul class="list-group">
+			{% for fornecedor in fornecedores %}
+
+			<li class="list-group-item">
+			<a href="{% url 'fornecedor_update' fornecedor.id %}">{{ fornecedor.empresa }} </a>
+			<a href="{% url 'fornecedor_delete' fornecedor.id %}" class="lixo">
+				<i class="fas fa-trash-alt"></i>
+			</a> 
+			</li>
+
+			{% endfor %}
+			<br>
+			<a href="{% url 'novo_fornecedor' %}" class="btn btn-primary"> Novo Fornecedor </a>
+			</ul>			
+		</div>
+
+		<div class="col">		
+		</div>
+	</div>
+
+{% endblock %}
+
+
+
+
