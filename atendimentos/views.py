@@ -26,4 +26,5 @@ def nova_compra(request):
         form.save()
         return redirect('novo_atendimento')
 
+
     return render(request, 'nova_compra.html', {'form': form})
